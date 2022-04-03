@@ -47,11 +47,7 @@ namespace Homework_lesson_4
             {
                 Console.WriteLine("Успех");
             }
-            else
-            {
-                break;
-            } 
-            
+          
         }
         
     }

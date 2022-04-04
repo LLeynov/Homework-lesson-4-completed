@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Homework_lesson_4
 {
@@ -14,41 +11,64 @@ namespace Homework_lesson_4
     некорректное число, вывести в консоль текст «Ошибка: введите число от 1 до 12».*/
     internal class Program
     {
-        enum Currentmonth
+
+        enum SeasonTimeEng
         {
-            January = 1,
-            February = 2,
-            March = 3,
-            April = 4,
-            May = 5,
-            June = 6,
-            July = 7,
-            August = 8,
-            September = 9,
-            October = 10,
-            November = 11,
-            December = 12,
-        }
-        enum Timeofyear
-        {
+            NaN = 0,
             Winter = 1,
             Spring = 2,
             Summer = 3,
             Autumn = 4,
-        }
-        
-        static void Main(string[] args)
-        {           
-           Console.WriteLine("Введите желаемое число от 1 до 12 (число является порядковым номером месяца). ");
-           int a = int.Parse(Console.ReadLine());
-           //Console.WriteLine((Currentmonth)a);
 
-           if (a == 1)
-            {
-                Console.WriteLine("Успех");
-            }
-          
         }
-        
+
+
+        static string translated(string chosedmonth)
+        {
+
+            if (chosedmonth == "Winter")
+            { return "зима"; }
+            else if (chosedmonth == "Spring")
+            { return "весна"; }
+            else if (chosedmonth == "Summer")
+            { return "лето"; }
+            else if (chosedmonth == "Autumn")
+            { return "осень"; }
+            else
+            { return "Ошибка: введите число от 1 до 12"; }
+        }
+
+        static string ChooseMonth(int a)
+        {
+            if (a == 1 || a == 2 || a == 12)
+            { return SeasonTimeEng.Winter.ToString(); }
+
+            else if (a == 3 || a == 4 || a == 5)
+            { return SeasonTimeEng.Spring.ToString(); }
+
+            else if (a == 6 || a == 7 || a == 8)
+            { return SeasonTimeEng.Summer.ToString(); }
+
+            else if (a == 9 || a == 10 || a == 11)
+            { return SeasonTimeEng.Autumn.ToString(); }
+
+            else
+            { return SeasonTimeEng.NaN.ToString(); ; }
+        }
+
+        static void Main(string[] args)
+        {
+            do
+            {
+                Console.WriteLine("Введите желаемое число от 1 до 12 (число является порядковым номером месяца). ");
+                int MonthNumber = int.Parse(Console.ReadLine());
+
+                string chosedmonth = ChooseMonth(MonthNumber);
+                string endedshit = translated(chosedmonth);
+                Console.WriteLine(endedshit);
+
+            }
+            while (true);
+        }
     }
 }

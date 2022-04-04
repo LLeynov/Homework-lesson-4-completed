@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace Homework_lesson_4
 {
+    //Написать программу, вычисляющую число Фибоначчи для заданного значения
+    //рекурсивным способом.
+
     internal class Program
     {
-        static void Main(string[] args)
-        {
-        }
+
     }
+
+    
 }
